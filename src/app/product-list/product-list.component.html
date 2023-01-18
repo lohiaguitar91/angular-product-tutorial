@@ -8,12 +8,18 @@
   </h3>
 
   <p *ngIf="product.description">
-    Description: {{ product.description }}
+    {{ product.description }}
+  </p>
+
+  <p *ngIf="product.price">
+    ${{ product.price }}
   </p>
 
   <button type="button" (click)="share()">
     Share
   </button>
+
+  <app-product-alerts [product]="product" (notify)="notify()"></app-product-alerts> <!-- Add the selector; now a child! -->
 </div>
 
 <!-- 
